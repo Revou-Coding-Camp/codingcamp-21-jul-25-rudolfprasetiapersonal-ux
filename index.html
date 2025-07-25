@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h2>To-Do List</h2>
+      <div class="wrapper-nav-btn">
+        <img id="darkMode" src="asset/moon_11302952.png" alt="Dark Mode" />
+      </div>
+    </div>
+
+    <div class="main">
+      <!-- Left: Form -->
+      <div class="container-1">
+        <div class="form-group">
+          <label for="taskInput">Task</label>
+          <input type="text" id="taskInput" placeholder="Enter task" />
+        </div>
+        <div class="form-group">
+          <label for="dateInput">Date</label>
+          <input type="date" id="dateInput" />
+        </div>
+        <div class="button-group">
+          <button id="addBtn" class="button button--primary">
+            <span style="font-size: 20px"> + </span>
+          </button>
+          <button
+            id="deleteBtn"
+            class="button button--primary"
+            style="background: red"
+          >
+            <span>Delete All</span>
+          </button>
+
+          <button
+            id="undoBtn"
+            class="button button--secondary button--icon"
+            data-tooltip="Undo Tasks"
+          >
+            <img
+              src="asset/icons8-undo-48.png"
+              alt="Undo icon"
+              class="button__icon"
+            />
+          </button>
+
+          <button
+            id="filterBtn"
+            class="button button--secondary button--icon"
+            data-tooltip="Filter Tasks"
+          >
+            <img
+              src="asset/icons8-filter-50.png"
+              alt="Filter icon"
+              class="button__icon"
+            />
+          </button>
+        </div>
+      </div>
+      <!-- Right: Todo List -->
+      <div class="container-2">
+        <label>Tasks</label>
+        <div id="todoList"></div>
+      </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </body>
+</html>

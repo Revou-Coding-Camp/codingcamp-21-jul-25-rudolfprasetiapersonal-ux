@@ -1,0 +1,229 @@
+/* Variabel warna default (light mode) */
+:root {
+  --color-bg: #222831;
+  --color-text: #f8f8f8;
+  --color-card: #393e46;
+  --color-primary: #4caf50;
+  --color-primary-hover: #1f7d53;
+  --color-danger: red;
+  --color-todo-bg: #555770;
+  --color-todo-completed: #a0a0a0;
+  --color-todo-completed-text: #555;
+  --color-hover: #;
+}
+
+/* Dark mode overrides */
+body.white-mode {
+  --color-bg: #eeefe0;
+  --color-text: #222831;
+  --color-card: #819a91;
+  --color-todo-bg: #a7c1a8;
+}
+
+/* Reset dan font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.animate__animated {
+  --animate-duration: 0.5s;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.navbar img {
+  width: 35px;
+  cursor: pointer;
+}
+
+/* Main layout */
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+.container-1,
+.container-2 {
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+}
+
+/* Form */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-secondary-bg);
+}
+
+.button--icon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+.button--primary:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.button__icon {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.2s;
+}
+
+/* Aktif: hanya ikon yang invert */
+button.active .button__icon {
+  filter: invert(1);
+}
+
+button.active {
+  background-color: var(--color-primary);
+  color: var(--color-secondary-text);
+}
+
+/* Tooltip styling */
+.button--icon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-tooltip-bg);
+  color: var(--color-tooltip-text);
+  padding: 5px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.button--icon:hover::after {
+  opacity: 1;
+}
+
+/* Todo item */
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--color-todo-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    text-decoration 0.3s ease;
+  cursor: pointer;
+}
+
+.todo-item div {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item p {
+  margin-left: 10px;
+  color: #ccc;
+  font-size: 10px;
+}
+
+.todo-item button {
+  background: var(--color-danger);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Completed task */
+.completed {
+  background: var(--color-todo-completed);
+  color: var(--color-todo-completed-text);
+  text-decoration: line-through;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    flex-direction: column;
+  }
+}
