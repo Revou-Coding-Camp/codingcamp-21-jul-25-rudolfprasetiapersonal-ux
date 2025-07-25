@@ -10,6 +10,9 @@
   --color-todo-completed: #a0a0a0;
   --color-todo-completed-text: #555;
   --color-hover: #;
+  --color-tooltip-bg:#333;
+  --color-tooltip-text:white;
+
 }
 
 /* Dark mode overrides */
